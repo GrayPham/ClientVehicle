@@ -18,6 +18,7 @@ namespace Parking.App.Common.ApiMethod
         {
             try
             {
+                // m dung ham nay thu xem
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 string apiUrl = Constants.Constants.ApiServerURL;
                 using (HttpClient client = new HttpClient())
@@ -26,12 +27,9 @@ namespace Parking.App.Common.ApiMethod
                     client.Timeout = TimeSpan.FromSeconds(900);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                     var json = JsonConvert.SerializeObject(model);
                     var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-
                     var response = await client.PostAsync(apiUrl, stringContent);
-                    // response.Wait();
                     return response;
                 }
             }
@@ -94,7 +92,7 @@ namespace Parking.App.Common.ApiMethod
                 throw;
             }
         }
-        public async static Task<HttpResponseMessage> PostCallSound(int soundNo) 
+        public async static Task<HttpResponseMessage> PostCallSound(int soundNo)
         {
             try
             {
@@ -103,11 +101,12 @@ namespace Parking.App.Common.ApiMethod
 
                 using (var httpClient = new HttpClient())
                 {
+
                     // Call the API and get the response
                     var response = await httpClient.GetAsync(url2);
 
                     // Get the content of the response as a string
-                 //   string content = await response.Content.ReadAsStringAsync();
+                    //   string content = await response.Content.ReadAsStringAsync();
 
                     // Print the content to the console
                     return response;
@@ -116,10 +115,72 @@ namespace Parking.App.Common.ApiMethod
             catch
             {
                 throw;
-                
+
             }
         }
-        public static ResultInfo DownFileAdmgt(object key,string filePath)
+        public async static Task<string> GetCallSoundAudio()
+        {
+            try
+            {
+                var url = "http://localhost:57966/api/apivoicefile/getlistaudiofile";
+                //var url2 = $"{url}={soundNo}";
+
+                using (var httpClient = new HttpClient())
+                {
+                    var data = new { audioId = (string)null, audioName = (string)null };
+                    var json = JsonConvert.SerializeObject(data);
+                    var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    // Call the API and wait for the response synchronously
+                    var response = httpClient.PostAsync(url, stringContent).Result;
+
+                    // Get the content of the response as a string
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    // Print the content to the console
+                    return content;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bug + " + ex.ToString());
+
+                return "";
+            }
+
+        }
+        public async static Task<string> GetSourceAudio(string soundNo)
+        {
+            try
+            {
+                var url = "http://localhost:57966/api/apivoicefile/getsourceaudiofile?soundNo";
+                var url2 = $"{url}={soundNo}";
+
+                using (var httpClient = new HttpClient())
+                {
+                    //var data = new { audioId = (string)null, audioName = (string)null };
+                    //var json = JsonConvert.SerializeObject(data);
+                    //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    // Call the API and wait for the response synchronously
+                    var response = httpClient.GetAsync(url2).Result;
+
+
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    // Print the content to the console
+                    return content;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bug + " + ex.ToString());
+
+                return "";
+            }
+
+        }
+        public static ResultInfo DownFileAdmgt(object key, string filePath)
         {
             var result = new ResultInfo();
             try
@@ -155,6 +216,54 @@ namespace Parking.App.Common.ApiMethod
                 return DownFileAdmgt(key, filePath);
             });
         }
+        public static async Task<ResultInfo> RequestPostAsync(UInt32 signature, UInt16 functionCode, RequestInfo req)
+        {
+            var result = new ResultInfo();
+            try
+            {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                DataRequest dataSend = new DataRequest()
+                {
+                    Signature = signature,
+                    FrameID = 0,
+                    DataLength = 0,
+                    FunctionCode = functionCode,
+                    Data = req
+                };
+
+                var json = JsonConvert.SerializeObject(dataSend);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.Timeout = TimeSpan.FromSeconds(Constants.Constants.RequestTimeOut);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    HttpResponseMessage response = await client.PostAsync(Constants.Constants.ApiServerURL, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseContent = await response.Content.ReadAsStringAsync();
+                        var infoRep = JsonHelper.JsonToInfo<ResultInfo>(responseContent);
+                        if (infoRep != null)
+                            return infoRep;
+                    }
+
+                    result.Status = false;
+                    result.ErrorMessage = response.Content.ReadAsStringAsync().Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = false;
+                result.ErrorMessage = ex.Message;
+            }
+
+            return result;
+        }
+
+
         public static ResultInfo RequestPost(UInt32 signature, UInt16 functionCode, RequestInfo req)
         {
             var result = new ResultInfo();
@@ -203,16 +312,16 @@ namespace Parking.App.Common.ApiMethod
 
             return result;
         }
-        public static Task<ResultInfo> RequestPostAsync(UInt32 signature, UInt16 functionCode, RequestInfo req)
-        {
-            return Task.Run<ResultInfo>(() => {
-                return RequestPost(signature, functionCode, req);
-            });
-        }
+        //public static Task<ResultInfo> RequestPostAsync(UInt32 signature, UInt16 functionCode, RequestInfo req)
+        //{
+        //    return Task.Run<ResultInfo>(() => {
+        //        return RequestPost(signature, functionCode, req);
+        //    });
+        //}
 
         //**---------------------------------------------------------
 
-        public static ResultInfo CheckNewVersion(string versionCode,string type)
+        public static ResultInfo CheckNewVersion(string versionCode, string type)
         {
             var result = new ResultInfo();
             try
@@ -229,7 +338,7 @@ namespace Parking.App.Common.ApiMethod
                 request.AddHeader("Content-Type", "application/json");
                 request.AddHeader("Accept", "application/json");
                 request.Timeout = Constants.Constants.RequestTimeOut;
-                
+
 
                 var resp = client.ExecuteGetAsync(request).Result;
                 if (resp.StatusCode == HttpStatusCode.OK)
@@ -258,8 +367,6 @@ namespace Parking.App.Common.ApiMethod
                 return CheckNewVersion(versionCode, type);
             });
         }
-
-
-        //**---------------------------------------------------------
+       
     }
 }

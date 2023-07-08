@@ -6,6 +6,6 @@ namespace Security.Common
 {
     public class Config
     {
-        public static readonly string socketFastAPI = "ws://localhost:8005/ws";
+        public static readonly string socketFastAPI = "ws://26.115.12.45:8005/ws";
     }
 }

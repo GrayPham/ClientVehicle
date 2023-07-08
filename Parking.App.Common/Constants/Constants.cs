@@ -58,7 +58,7 @@ namespace Parking.App.Common.Constants
         public static string NextArrow = "NextArrow";
 
         //  public const string IpServer= "kc192.168.100.23";
-        public const string IpServer = "127.0.0.1";
+        public const string IpServer = "26.115.12.45";
         public const string DeviceType = "DVC001";
 
         public static bool isEnableAutomaticalyRunApp = true;

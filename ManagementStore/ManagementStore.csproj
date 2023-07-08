@@ -125,6 +125,9 @@
     <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.16\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -384,6 +387,10 @@
       <Project>{655CC7E8-63CF-45D7-8BE6-FBC21D4CC622}</Project>
       <Name>InfrastructureCore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Parking.App.Common\Parking.App.Common.csproj">
+      <Project>{5E42B08D-DC7A-4092-A143-AEBB26F1FE0D}</Project>
+      <Name>Parking.App.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Parking.App.Contract\Parking.App.Contract.csproj">
       <Project>{682D3344-82F5-4AA3-BBC0-090CE78B6639}</Project>
       <Name>Parking.App.Contract</Name>
@@ -399,6 +406,10 @@
     <ProjectReference Include="..\Parking.App.Language\Parking.App.Language.csproj">
       <Project>{23CC9A0A-7EC9-49D0-83B0-5378E3EEC412}</Project>
       <Name>Parking.App.Language</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parking.App.Service\Parking.App.Service.csproj">
+      <Project>{B9372C81-0110-4361-B7B9-DE618A4D9D3C}</Project>
+      <Name>Parking.App.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Security.VehicleCheckHttpClient\Security.VehicleCheckHttpClient.csproj">
       <Project>{0FF64F68-0D47-4986-87A1-69635A1C7312}</Project>

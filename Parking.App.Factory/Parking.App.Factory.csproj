@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +60,14 @@
       <Project>{84F67D5D-2561-45FE-BE48-41220D72C3A0}</Project>
       <Name>Connect.SocketClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Parking.App.Common\Parking.App.Common.csproj">
+      <Project>{5E42B08D-DC7A-4092-A143-AEBB26F1FE0D}</Project>
+      <Name>Parking.App.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parking.App.Contract\Parking.App.Contract.csproj">
+      <Project>{682D3344-82F5-4AA3-BBC0-090CE78B6639}</Project>
+      <Name>Parking.App.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Parking.App.Interface\Parking.App.Interface.csproj">
       <Project>{B63B96BD-00CC-45A4-AC12-66B88C5DF490}</Project>
       <Name>Parking.App.Interface</Name>
@@ -65,6 +76,10 @@
       <Project>{B9372C81-0110-4361-B7B9-DE618A4D9D3C}</Project>
       <Name>Parking.App.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

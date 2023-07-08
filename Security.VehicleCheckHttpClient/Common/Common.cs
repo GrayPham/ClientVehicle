@@ -10,7 +10,7 @@ namespace Security.VehicleCheckHttpClient.Common
 {
     public class Common
     {
-        public static readonly string api = "https://localhost:8005/api";
+        public static readonly string api = "http://26.115.12.45:8005/api";
         
     }
 }

@@ -16,7 +16,7 @@ namespace Connect.Common.Contract
         public static string FirstName = @"Parking";
         public static string LastName = @"Management System";
         public static string AppName = @"Parking Management System";
-        public const string Author = @"Hermes";
+        public static string Author = @"Hermes";
         public static Guid AppKey = Guid.NewGuid();
         public static string GuiD = "";
         public static string Phone = "0365858975";
@@ -28,7 +28,7 @@ namespace Connect.Common.Contract
         public static string InstallID = @"";
         public static EClientType eClientType = EClientType.None;
         public static int PortUser = 9000;
-        public static string IPServer = "127.0.0.1";
+        public static string IPServer = "26.115.12.45";
         public static string AccessKey = "@@##151290";
         public static bool AllowGetServer { get; set; } = true;
         public static bool AllowTranslate { get; set; } = false;

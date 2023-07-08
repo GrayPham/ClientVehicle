@@ -16,6 +16,12 @@ using System;
 using Security;
 using System.Drawing;
 using System.Collections.Generic;
+using Parking.Contract.Common;
+using Connect.RemoteDataProvider.Interface;
+using Parking.App.Service.Common;
+using Connect.Common.Helper;
+using Parking.App.Common;
+using Newtonsoft.Json;
 
 namespace ManagementStore.Form
 {
@@ -30,6 +36,21 @@ namespace ManagementStore.Form
         // Connect Socket 
         private SocketDetect Encode = new SocketDetect();
         List<string> dataCamera = new List<string>();
+
+        //**------------------------------------------------------------------------
+        private ICacheDataService<tblClientSoundMgtInfo> _tblClientSoundMgtService;
+        private ICacheDataService<tblStoreDeviceInfo> _tblStoreDeviceInfoService;
+        private ICacheDataService<tblAdMgtInfo> _tblAdMgtServiceInfo;
+        private readonly tblAdMgtService _tblAdMgtService;
+        private IList<tblClientSoundMgtInfo> _listSetting;
+
+        private readonly XMLReader _xml = new XMLReader();
+        private int _clientSound;
+        private int _clientStoreDevice;
+        public bool IsReConnect { get; set; } = true;
+        public static bool isCanChangeTheAd = true;
+        public static bool isCanModify { get; set; } = false;
+        public static bool isShouldOpenCamera { get; set; } = false;
         public DetectClient()
         {
             _log = ProgramFactory.Instance.Log;
@@ -44,6 +65,12 @@ namespace ManagementStore.Form
             barItemIP.Caption = "IP:" + ProgramFactory.Instance.IPServer;
             barItemVersion.Caption = LSystem.LVersion + ApplicationInfo.VersionName;
             barItemPort.Caption = string.Format(LSystem.LPort, ApplicationInfo.PortUser);
+            _tblClientSoundMgtService = ProgramFactory.Instance.tblClientSoundMgtService;
+            _tblAdMgtServiceInfo = ProgramFactory.Instance.tblAdMgtService;
+            _listSetting = ProgramFactory.Instance.tblClientSoundMgtInfos;
+            _tblStoreDeviceInfoService = ProgramFactory.Instance.tblStoreDeviceService;
+            _clientStoreDevice = _tblStoreDeviceInfoService.RegisterClient(_tblStoreDeviceInfoService.GetType().Name, StoreDeviceSynchronized);
+
             if (dataCamera.Count > 2)
             {
                 //Camera LP detection
@@ -94,6 +121,53 @@ namespace ManagementStore.Form
         public void LoginSuccess(SessionInfo info)
         {
 
+        }
+
+        private void StoreDeviceSynchronized(object sender, EventArgs<int> e)
+        {
+            _tblStoreDeviceInfoService.GetDataIsActivityAsync(999999).ContinueWith(t =>
+            {
+                if (!t.IsFaulted)
+                {
+                    if (t.Result.Status)
+                    {
+                        var listData = t.Result.Data as IList<tblStoreDeviceInfo>;
+                        if (listData != null)
+                        {
+                            try
+                            {
+
+                                if (ConfigClass.StoreNo == 0 || string.IsNullOrEmpty(ConfigClass.DeviceKey) || ConfigClass.StoreDeviceNo == 0)
+                                {
+                                    return;
+                                }
+
+                                foreach (var item in listData)
+                                {
+                                    if (!string.IsNullOrEmpty(item.ListDeviceKeyNo) && item.StoreNo == ConfigClass.StoreNo) // && item.DeviceType == "DVC002"
+                                    {
+                                        var ListDeviceKey = JsonConvert.DeserializeObject<List<string>>(item.ListDeviceKeyNo);
+                                        if (ListDeviceKey.Contains(ConfigClass.DeviceKey))
+                                        {
+                                            ConfigClass.FaceOkDeviceKey = item.DeviceKeyNo;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+
+                                throw;
+                            }
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+            });
         }
 
         public void SetStatus(string description)

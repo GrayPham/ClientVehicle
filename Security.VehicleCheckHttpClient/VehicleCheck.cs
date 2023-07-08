@@ -45,7 +45,7 @@ namespace Security.VehicleCheckHttpClient
             using (var client = new HttpClient())
             {
                 var content = new StringContent(payload, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync("http://localhost:8005/api/track/trackingVehicle", content);
+                var response = await client.PostAsync("http://26.115.12.45:8005/api/track/trackingVehicle", content);
                 //string responseContent = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
@@ -80,7 +80,7 @@ namespace Security.VehicleCheckHttpClient
             using (var client = new HttpClient())
             {
                 var content = new StringContent(payload, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync("http://localhost:8005/api/track/trackingReports", content);
+                var response = await client.PostAsync("http://26.115.12.45:8005/api/track/trackingReports", content);
                 //string responseContent = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {

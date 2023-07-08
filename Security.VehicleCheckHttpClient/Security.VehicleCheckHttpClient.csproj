@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.3</Version>
+      <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="System.Drawing.Common">
       <Version>4.7.3</Version>
@@ -60,6 +60,11 @@
       <Version>4.3.4</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Parking.App.Common\Parking.App.Common.csproj">
+      <Project>{5E42B08D-DC7A-4092-A143-AEBB26F1FE0D}</Project>
+      <Name>Parking.App.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

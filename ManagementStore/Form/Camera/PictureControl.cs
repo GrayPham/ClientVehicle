@@ -5,6 +5,7 @@ using Emgu.CV.Structure;
 using ManagementStore.Common;
 using ManagementStore.DTO;
 using ManagementStore.Services;
+using Newtonsoft.Json;
 using Security;
 using Security.VehicleCheckHttpClient;
 using System;
@@ -22,7 +23,9 @@ namespace ManagementStore.Form.Camera
     public partial class PictureControl : DevExpress.XtraEditors.XtraUserControl
     {
         // YOLO Detect
-        private YoloDetectServices detect = new YoloDetectServices(CudaInvoke.HasCuda);
+        bool gpuAvailable = false;
+
+        private YoloDetectServices detect = new YoloDetectServices(false);
         private YoloModelDto dto;
         // Video Setting
         VideoCapture capture;
@@ -122,11 +125,16 @@ namespace ManagementStore.Form.Camera
                                 
                                     // return LP
                                     string mess = await encode.request(dto_sent.getImageBase(), dto_sent.yoloPredictions);
-                                    textEditLP.Text = mess;
-                                    // Handle Sent API CheckINOUT
-                                    if (ModelConfig.socketOpen && mess != "")
+                                    var dataDetect = JsonConvert.DeserializeObject<DetectDto>(mess);
+                                    if(dataDetect.Plate == null || dataDetect.Plate == "")
                                     {
-                                        if(mess != "None")
+                                        textEditLP.Text = dataDetect.Mess;
+                                    }
+                                    textEditLP.Text = dataDetect.Plate;
+                                    // Handle Sent API CheckINOUT
+                                    if (ModelConfig.socketOpen && dataDetect.Plate != "")
+                                    {
+                                        if(dataDetect.Plate != "None")
                                         {
                                             ModelConfig.listFaceCamera[0].startFaceDetect();
                                             Image face = ModelConfig.listFaceCamera[0].getFaceImage();
@@ -134,7 +142,7 @@ namespace ManagementStore.Form.Camera
                                             if (face != null || pictureBoxCamera.Image != null)
                                             {
                                                 Image lp = pictureBoxCamera.Image;
-                                                string resultCheckout = await cVehicle.CheckInVehicleAsync(mess, face, lp);
+                                                string resultCheckout = await cVehicle.CheckInVehicleAsync(dataDetect.Plate, face, lp,dataDetect.TypeVehicle,dataDetect.TypeLp);
                                                 if (resultCheckout == "Successful")
                                                 {
                                                     cEditInVehicle.Checked = true;

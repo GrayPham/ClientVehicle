@@ -114,6 +114,9 @@ namespace Security
                     //}
                     var message = Encoding.UTF8.GetString(bufferGet.Array, bufferGet.Offset, receivedResult.Count);
 
+                    //var dataDetect = JsonConvert.DeserializeObject<DetectDto>(message);
+
+
                     return message.ToString();
 
 

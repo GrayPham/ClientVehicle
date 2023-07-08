@@ -1,4 +1,5 @@
-﻿using ManagementStore.Common;
+﻿using Emgu.CV.Cuda;
+using ManagementStore.Common;
 using ManagementStore.DTO;
 using Microsoft.ML.OnnxRuntime;
 using System;
@@ -18,6 +19,16 @@ namespace ManagementStore.Services
         private YoloScorer<YoloCocoP5Model> scorer;
         public YoloDetectServices(bool cuda)
         {
+            bool gpuAvailable = false;
+            try
+            {
+                gpuAvailable = CudaInvoke.HasCuda;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
             if (cuda)
             {
                 scorer = new YoloScorer<YoloCocoP5Model>(ModelConfig.dataFolderPath + "/bestLP.onnx", SessionOptions.MakeSessionOptionWithCudaProvider(0));

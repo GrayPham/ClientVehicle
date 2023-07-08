@@ -201,6 +201,7 @@
     </Compile>
     <Compile Include="ConnectionDB.cs" />
     <Compile Include="DTO\Camera.cs" />
+    <Compile Include="DTO\DetectDto.cs" />
     <Compile Include="DTO\YoloModelDto.cs" />
     <Compile Include="Extensions\SearchExtensions.cs" />
     <Compile Include="Extensions\PasswordExtensions.cs" />

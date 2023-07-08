@@ -10,7 +10,7 @@
       "Security/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json": "12.0.2",
           "System.Drawing.Common": "7.0.0",
           "Yolov5Net.Scorer": "1.0.0"
         },
@@ -18,24 +18,24 @@
           "Security.dll": {}
         }
       },
-      "Microsoft.AI.DirectML/1.10.1": {},
-      "Microsoft.ML.OnnxRuntime/1.14.1": {
+      "Microsoft.AI.DirectML/1.12.0": {},
+      "Microsoft.ML.OnnxRuntime/1.15.1": {
         "dependencies": {
-          "Microsoft.ML.OnnxRuntime.Managed": "1.14.1"
+          "Microsoft.ML.OnnxRuntime.Managed": "1.15.1"
         }
       },
-      "Microsoft.ML.OnnxRuntime.DirectML/1.14.1": {
+      "Microsoft.ML.OnnxRuntime.DirectML/1.15.1": {
         "dependencies": {
-          "Microsoft.AI.DirectML": "1.10.1",
-          "Microsoft.ML.OnnxRuntime.Managed": "1.14.1"
+          "Microsoft.AI.DirectML": "1.12.0",
+          "Microsoft.ML.OnnxRuntime.Managed": "1.15.1"
         }
       },
-      "Microsoft.ML.OnnxRuntime.Gpu/1.14.1": {
+      "Microsoft.ML.OnnxRuntime.Gpu/1.15.1": {
         "dependencies": {
-          "Microsoft.ML.OnnxRuntime.Managed": "1.14.1"
+          "Microsoft.ML.OnnxRuntime.Managed": "1.15.1"
         }
       },
-      "Microsoft.ML.OnnxRuntime.Managed/1.14.1": {
+      "Microsoft.ML.OnnxRuntime.Managed/1.15.1": {
         "dependencies": {
           "System.Memory": "4.5.3"
         },
@@ -48,7 +48,7 @@
       },
       "Microsoft.ML.OnnxRuntime.MKLML/1.6.0": {
         "dependencies": {
-          "Microsoft.ML.OnnxRuntime.Managed": "1.14.1"
+          "Microsoft.ML.OnnxRuntime.Managed": "1.15.1"
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -57,11 +57,11 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
-      "Newtonsoft.Json/13.0.3": {
+      "Newtonsoft.Json/12.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.3.27908"
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
           }
         }
       },
@@ -112,11 +112,11 @@
       },
       "Yolov5Net.Scorer/1.0.0": {
         "dependencies": {
-          "Microsoft.ML.OnnxRuntime": "1.14.1",
-          "Microsoft.ML.OnnxRuntime.DirectML": "1.14.1",
-          "Microsoft.ML.OnnxRuntime.Gpu": "1.14.1",
+          "Microsoft.ML.OnnxRuntime": "1.15.1",
+          "Microsoft.ML.OnnxRuntime.DirectML": "1.15.1",
+          "Microsoft.ML.OnnxRuntime.Gpu": "1.15.1",
           "Microsoft.ML.OnnxRuntime.MKLML": "1.6.0",
-          "Microsoft.ML.OnnxRuntime.Managed": "1.14.1",
+          "Microsoft.ML.OnnxRuntime.Managed": "1.15.1",
           "System.Drawing.Common": "7.0.0"
         },
         "runtime": {
@@ -131,40 +131,40 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AI.DirectML/1.10.1": {
+    "Microsoft.AI.DirectML/1.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sRuaX3htE6fdlf4B66lC0MoNhYSCKwp5fTsiEq16qIjh5Cro9fURgwif5yM0Sz18E+t2JytVSQGV7zL0BX25vw==",
-      "path": "microsoft.ai.directml/1.10.1",
-      "hashPath": "microsoft.ai.directml.1.10.1.nupkg.sha512"
+      "sha512": "sha512-GvexdRa11PYxzb3vU/U7stc/dpx4SDQ/A8q/mQfba9LHdxx3nQSKzArq1YWUzEZPQ3+j5AZkpJuybWa0oo1EnQ==",
+      "path": "microsoft.ai.directml/1.12.0",
+      "hashPath": "microsoft.ai.directml.1.12.0.nupkg.sha512"
     },
-    "Microsoft.ML.OnnxRuntime/1.14.1": {
+    "Microsoft.ML.OnnxRuntime/1.15.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6tCB0S2lPh1ztFZeBtCNLKdc1Fj+DapzQZBtRiEOb1H6LEgGPS7bGWjI/FnfztoOPCOKffgwzly/OmNP7y0dzQ==",
-      "path": "microsoft.ml.onnxruntime/1.14.1",
-      "hashPath": "microsoft.ml.onnxruntime.1.14.1.nupkg.sha512"
+      "sha512": "sha512-kqZ1pL08yus4rVi5gkqaVRzu2Dgu0fC05f1EdV/Th51DIromCh8ZiWrjX7xaED1jqLpa7gMQpa1XEiSgtaZo7Q==",
+      "path": "microsoft.ml.onnxruntime/1.15.1",
+      "hashPath": "microsoft.ml.onnxruntime.1.15.1.nupkg.sha512"
     },
-    "Microsoft.ML.OnnxRuntime.DirectML/1.14.1": {
+    "Microsoft.ML.OnnxRuntime.DirectML/1.15.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-591e45IIAr+M4gLO+eZXLV8TPzzJk9Ivm2kYQomPG8xbeF8yRKfvWeOikrM7TRdTFRGiEy9Q7hXFeWpgrAoccQ==",
-      "path": "microsoft.ml.onnxruntime.directml/1.14.1",
-      "hashPath": "microsoft.ml.onnxruntime.directml.1.14.1.nupkg.sha512"
+      "sha512": "sha512-0rghFAdw/naCXRbfU5CGTa16JkAoG8nen/dfeVWr/0BegpavXx/D4n+hhYdHjZCcRqNedLP8WGFWd2MNc7Wg7w==",
+      "path": "microsoft.ml.onnxruntime.directml/1.15.1",
+      "hashPath": "microsoft.ml.onnxruntime.directml.1.15.1.nupkg.sha512"
     },
-    "Microsoft.ML.OnnxRuntime.Gpu/1.14.1": {
+    "Microsoft.ML.OnnxRuntime.Gpu/1.15.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VmkHMkTUGF8F3EMurHxER0DF0FbtSlOeNeHEPmxxtDG849XZNdS+tcpz/H6SfK56lbN4Bpwj/pepRGxfdS0ovQ==",
-      "path": "microsoft.ml.onnxruntime.gpu/1.14.1",
-      "hashPath": "microsoft.ml.onnxruntime.gpu.1.14.1.nupkg.sha512"
+      "sha512": "sha512-lRq+722lcgSQXvCBkCOsE1fpPVzsb7bOBYaUt08/+OGnP7swJazJ32y+SlxiSlZJM9cGpFlNzsd1D4+7adxNaw==",
+      "path": "microsoft.ml.onnxruntime.gpu/1.15.1",
+      "hashPath": "microsoft.ml.onnxruntime.gpu.1.15.1.nupkg.sha512"
     },
-    "Microsoft.ML.OnnxRuntime.Managed/1.14.1": {
+    "Microsoft.ML.OnnxRuntime.Managed/1.15.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Htm4aJu0qO6cdf/UGH+7s3ue8bZX02CyH/fmenBQvUJAXswbLmUInV5eduU+/kwT58uN3ilAJFnWSXbH7EKgYg==",
-      "path": "microsoft.ml.onnxruntime.managed/1.14.1",
-      "hashPath": "microsoft.ml.onnxruntime.managed.1.14.1.nupkg.sha512"
+      "sha512": "sha512-sWsqzgVoPPfdj3/S/8+Rr9xEdS4LYH5nV7Na+K+jOnzdWjR71IFZUbpR8bbtAwT/qPmazgNgoc+tMmey4NrVmw==",
+      "path": "microsoft.ml.onnxruntime.managed/1.15.1",
+      "hashPath": "microsoft.ml.onnxruntime.managed.1.15.1.nupkg.sha512"
     },
     "Microsoft.ML.OnnxRuntime.MKLML/1.6.0": {
       "type": "package",
@@ -187,12 +187,12 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.3": {
+    "Newtonsoft.Json/12.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
-      "path": "newtonsoft.json/13.0.3",
-      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
     },
     "System.Buffers/4.4.0": {
       "type": "package",

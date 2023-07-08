@@ -11,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using Security.VehicleCheckHttpClient.Common;
 using System.Drawing.Imaging;
+using Parking.App.Common;
 
 namespace Security.VehicleCheckHttpClient
 {
@@ -39,7 +40,7 @@ namespace Security.VehicleCheckHttpClient
             // Create a JSON payload containing the base64 image data
 
             // Convert the base64 image to a JSON payload
-            var payload = JsonConvert.SerializeObject(new { platenum = platenumber, typeTransport = "car", typeLicensePlate = typeLP, stringFace = base64Image, stringlp = base64Imagelp, siteId=19 });
+            var payload = JsonConvert.SerializeObject(new { platenum = platenumber, typeTransport = typeTransport, typeLicensePlate = typeLP, stringFace = base64Image, stringlp = base64Imagelp, siteId= ConfigClass.StoreNo });
             // Send the payload to the FastAPI server using an HTTP POST request
             // Gọi đến API kiểm tra xe ra vào
             using (var client = new HttpClient())

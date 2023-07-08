@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<ArrayOfTblClientSoundMgtInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <tblClientSoundMgtInfo>
+    <SoundNo>8</SoundNo>
+    <SoundName>ki</SoundName>
+    <LocalFileLocation>bet</LocalFileLocation>
+    <KioskFolderLocation>a</KioskFolderLocation>
+    <DeployStatus>false</DeployStatus>
+    <RegistDate>2023-01-11T14:19:07.617</RegistDate>
+    <ResitUser>a</ResitUser>
+    <IsActivity>false</IsActivity>
+    <CreatedDate>2000-10-12T00:00:00</CreatedDate>
+    <CreatedBy>3</CreatedBy>
+    <LastModifiedBy>3</LastModifiedBy>
+    <LastModified>2023-01-11T14:19:00</LastModified>
+    <Version>1</Version>
+    <ValueID xsi:type="xsd:int">8</ValueID>
+  </tblClientSoundMgtInfo>
+  <tblClientSoundMgtInfo>
+    <SoundNo>123</SoundNo>
+    <SoundName>Ad Hello</SoundName>
+    <LocalFileLocation>D:\Site\Pleiger\uploads/audios/Bo Xi Bo - Hoang Thuy Linh.mp3</LocalFileLocation>
+    <KioskFolderLocation />
+    <DeployStatus>false</DeployStatus>
+    <RegistDate>2022-12-23T11:28:12.807</RegistDate>
+    <ResitUser>711b67d3-0fcf-4b65-a</ResitUser>
+    <IsActivity>true</IsActivity>
+    <CreatedDate>2022-12-23T11:28:00</CreatedDate>
+    <CreatedBy>711b67d3-0fcf-4b65-a</CreatedBy>
+    <LastModifiedBy>711b67d3-0fcf-4b65-a</LastModifiedBy>
+    <LastModified>2023-01-12T09:24:00</LastModified>
+    <Version>1</Version>
+    <ValueID xsi:type="xsd:int">123</ValueID>
+  </tblClientSoundMgtInfo>
+  <tblClientSoundMgtInfo>
+    <SoundNo>456</SoundNo>
+    <SoundName>Avatar</SoundName>
+    <LocalFileLocation>C:\Users\PC\Work\Project\Kiosk\Kiosk.Website\src\HLFXFramework.WebHost\uploads/audios/Gieo Que - Hoang Thuy Linh_ Den.mp3</LocalFileLocation>
+    <KioskFolderLocation />
+    <DeployStatus>false</DeployStatus>
+    <RegistDate>2023-01-12T09:15:36.61</RegistDate>
+    <ResitUser>711b67d3-0fcf-4b65-a</ResitUser>
+    <IsActivity>true</IsActivity>
+    <CreatedDate>2023-01-12T09:16:00</CreatedDate>
+    <CreatedBy>711b67d3-0fcf-4b65-a</CreatedBy>
+    <LastModifiedBy />
+    <LastModified>2023-01-15T22:00:31.3445219+07:00</LastModified>
+    <Version>2</Version>
+    <ValueID xsi:type="xsd:int">456</ValueID>
+  </tblClientSoundMgtInfo>
+  <tblClientSoundMgtInfo>
+    <SoundNo>6</SoundNo>
+    <SoundName>Bo Xi Bo - Hoang Thu</SoundName>
+    <LocalFileLocation>D:\Website\OwlgardienWeb\uploads/audios/Bo Xi Bo - Hoang Thuy Linh.mp3</LocalFileLocation>
+    <KioskFolderLocation />
+    <DeployStatus>false</DeployStatus>
+    <RegistDate>2022-12-04T20:02:10.393</RegistDate>
+    <ResitUser>sda</ResitUser>
+    <IsActivity>false</IsActivity>
+    <CreatedDate>2022-12-04T20:03:00</CreatedDate>
+    <CreatedBy>ád</CreatedBy>
+    <LastModifiedBy>711b67d3-0fcf-4b65-a</LastModifiedBy>
+    <LastModified>2023-01-12T15:58:00</LastModified>
+    <Version>3</Version>
+    <ValueID xsi:type="xsd:int">6</ValueID>
+  </tblClientSoundMgtInfo>
+  <tblClientSoundMgtInfo>
+    <SoundNo>5</SoundNo>
+    <SoundName>xx</SoundName>
+    <LocalFileLocation>C:\Users\PC\Work\Project\Kiosk\Kiosk.Website\src\HLFXFramework.WebHost\uploads\beautiful_life-ace_of_base.wav</LocalFileLocation>
+    <KioskFolderLocation>D:\ThlOne\Kiosk.App.Client\Kiosk.App.Shell\Sounds\xx.wav</KioskFolderLocation>
+    <DeployStatus>false</DeployStatus>
+    <RegistDate>2022-12-04T16:44:33.36</RegistDate>
+    <ResitUser>sda</ResitUser>
+    <IsActivity>false</IsActivity>
+    <CreatedDate>2022-12-04T16:45:00</CreatedDate>
+    <CreatedBy>ád</CreatedBy>
+    <LastModifiedBy>711b67d3-0fcf-4b65-a</LastModifiedBy>
+    <LastModified>2023-01-13T14:10:00</LastModified>
+    <Version>0</Version>
+    <ValueID xsi:type="xsd:int">5</ValueID>
+  </tblClientSoundMgtInfo>
+  <tblClientSoundMgtInfo>
+    <SoundNo>3</SoundNo>
+    <SoundName>See Tinh</SoundName>
+    <LocalFileLocation>D:\Website\OwlgardienWeb\uploads/audios/See Tinh - Hoang Thuy Linh.mp3</LocalFileLocation>
+    <KioskFolderLocation />
+    <DeployStatus>false</DeployStatus>
+    <RegistDate>2022-11-09T22:16:26.503</RegistDate>
+    <ResitUser>32</ResitUser>
+    <IsActivity>true</IsActivity>
+    <CreatedDate>2022-08-11T00:00:00</CreatedDate>
+    <CreatedBy>System</CreatedBy>
+    <LastModifiedBy>711b67d3-0fcf-4b65-a</LastModifiedBy>
+    <LastModified>2023-01-13T14:02:00</LastModified>
+    <Version>2</Version>
+    <ValueID xsi:type="xsd:int">3</ValueID>
+  </tblClientSoundMgtInfo>
+  <tblClientSoundMgtInfo>
+    <SoundNo>4</SoundNo>
+    <SoundName>Fanfare60</SoundName>
+    <LocalFileLocation>C:\Users\PC\Work\Project\Kiosk\Kiosk.Website\src\HLFXFramework.WebHost\uploads/audios/Gieo Que - Hoang Thuy Linh_ Den.mp3</LocalFileLocation>
+    <KioskFolderLocation>D:\ThlOne\Kiosk.App.Client\Kiosk.App.Shell\Sounds\Fanfare60.wav</KioskFolderLocation>
+    <DeployStatus>false</DeployStatus>
+    <RegistDate>2022-11-09T22:22:12.54</RegistDate>
+    <ResitUser>32</ResitUser>
+    <IsActivity>true</IsActivity>
+    <CreatedDate>2022-08-11T00:00:00</CreatedDate>
+    <CreatedBy>System</CreatedBy>
+    <LastModifiedBy>711b67d3-0fcf-4b65-a</LastModifiedBy>
+    <LastModified>2023-01-13T14:10:00</LastModified>
+    <Version>0</Version>
+    <ValueID xsi:type="xsd:int">4</ValueID>
+  </tblClientSoundMgtInfo>
+</ArrayOfTblClientSoundMgtInfo>

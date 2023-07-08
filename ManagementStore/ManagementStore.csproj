@@ -362,6 +362,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Setting\appsettings.json" />
+    <None Include="Setting\Font\malgun.ttf" />
+    <None Include="Setting\Font\malgunbd.ttf" />
+    <None Include="Setting\Font\malgunsl.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Connect.Common\Connect.Common.csproj">
@@ -458,6 +462,12 @@
     <Content Include="Content\metro.css" />
     <Content Include="Content\metro.min.css" />
     <Content Include="Fonts\metro.svg" />
+    <Content Include="Setting\AdMgtInfos.xml" />
+    <Content Include="Setting\Config.xml" />
+    <Content Include="Setting\haarcascade_frontalface_default.xml" />
+    <Content Include="Setting\OwlClientContent.xml" />
+    <Content Include="Setting\SettingView.xml" />
+    <Content Include="Setting\TextFile1.txt" />
     <None Include="Resources\technology_32x32.png" />
     <None Include="Resources\payment2.png" />
     <Content Include="Scripts\metro.js" />
@@ -501,12 +511,26 @@
     <Error Condition="!Exists('..\packages\Microsoft.AI.DirectML.1.10.1\build\Microsoft.AI.DirectML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AI.DirectML.1.10.1\build\Microsoft.AI.DirectML.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.DirectML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.DirectML.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.DirectML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.DirectML.targets'))" />
+    <Error Condition="!Exists('..\packages\Emgu.CV.runtime.windows.cuda.blas.11.1.218\build\Emgu.CV.runtime.windows.cuda.blas.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Emgu.CV.runtime.windows.cuda.blas.11.1.218\build\Emgu.CV.runtime.windows.cuda.blas.targets'))" />
+    <Error Condition="!Exists('..\packages\Emgu.CV.runtime.windows.cuda.cufft.11.1.218\build\Emgu.CV.runtime.windows.cuda.cufft.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Emgu.CV.runtime.windows.cuda.cufft.11.1.218\build\Emgu.CV.runtime.windows.cuda.cufft.targets'))" />
+    <Error Condition="!Exists('..\packages\Emgu.CV.runtime.windows.cuda.dnn.cnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.cnn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Emgu.CV.runtime.windows.cuda.dnn.cnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.cnn.targets'))" />
+    <Error Condition="!Exists('..\packages\Emgu.CV.runtime.windows.cuda.dnn.ops.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.ops.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Emgu.CV.runtime.windows.cuda.dnn.ops.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.ops.targets'))" />
+    <Error Condition="!Exists('..\packages\Emgu.CV.runtime.windows.cuda.dnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Emgu.CV.runtime.windows.cuda.dnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.targets'))" />
+    <Error Condition="!Exists('..\packages\Emgu.CV.runtime.windows.cuda.npp.11.1.218\build\Emgu.CV.runtime.windows.cuda.npp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Emgu.CV.runtime.windows.cuda.npp.11.1.218\build\Emgu.CV.runtime.windows.cuda.npp.targets'))" />
+    <Error Condition="!Exists('..\packages\Emgu.CV.runtime.windows.cuda.4.4.0.4061\build\Emgu.CV.runtime.windows.cuda.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Emgu.CV.runtime.windows.cuda.4.4.0.4061\build\Emgu.CV.runtime.windows.cuda.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.ML.OnnxRuntime.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets')" />
   <Import Project="..\packages\Emgu.CV.runtime.windows.4.4.0.4099\build\Emgu.CV.runtime.windows.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.4.4.0.4099\build\Emgu.CV.runtime.windows.targets')" />
   <Import Project="..\packages\Microsoft.ML.OnnxRuntime.Gpu.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Gpu.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.Gpu.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Gpu.targets')" />
   <Import Project="..\packages\Microsoft.AI.DirectML.1.10.1\build\Microsoft.AI.DirectML.targets" Condition="Exists('..\packages\Microsoft.AI.DirectML.1.10.1\build\Microsoft.AI.DirectML.targets')" />
   <Import Project="..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.DirectML.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.DirectML.1.14.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.DirectML.targets')" />
+  <Import Project="..\packages\Emgu.CV.runtime.windows.cuda.blas.11.1.218\build\Emgu.CV.runtime.windows.cuda.blas.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.cuda.blas.11.1.218\build\Emgu.CV.runtime.windows.cuda.blas.targets')" />
+  <Import Project="..\packages\Emgu.CV.runtime.windows.cuda.cufft.11.1.218\build\Emgu.CV.runtime.windows.cuda.cufft.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.cuda.cufft.11.1.218\build\Emgu.CV.runtime.windows.cuda.cufft.targets')" />
+  <Import Project="..\packages\Emgu.CV.runtime.windows.cuda.dnn.cnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.cnn.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.cuda.dnn.cnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.cnn.targets')" />
+  <Import Project="..\packages\Emgu.CV.runtime.windows.cuda.dnn.ops.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.ops.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.cuda.dnn.ops.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.ops.targets')" />
+  <Import Project="..\packages\Emgu.CV.runtime.windows.cuda.dnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.cuda.dnn.8.0.1\build\Emgu.CV.runtime.windows.cuda.dnn.targets')" />
+  <Import Project="..\packages\Emgu.CV.runtime.windows.cuda.npp.11.1.218\build\Emgu.CV.runtime.windows.cuda.npp.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.cuda.npp.11.1.218\build\Emgu.CV.runtime.windows.cuda.npp.targets')" />
+  <Import Project="..\packages\Emgu.CV.runtime.windows.cuda.4.4.0.4061\build\Emgu.CV.runtime.windows.cuda.targets" Condition="Exists('..\packages\Emgu.CV.runtime.windows.cuda.4.4.0.4061\build\Emgu.CV.runtime.windows.cuda.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

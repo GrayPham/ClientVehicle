@@ -13,7 +13,7 @@ namespace ManagementStore.Common
     {
         public static string dataFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets/Weights");
         public static string constImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", ""), "Assets/Images/hcmute.jpg");
-        public static string socketFastAPI = "ws://localhost:8005/ws";
+        public static string socketFastAPI = "ws://26.115.12.45:8005/ws";
         public static bool socketOpen = false;
         public readonly static string checkInSuccess = "Successful";
         public readonly static string checkInError = "Error";

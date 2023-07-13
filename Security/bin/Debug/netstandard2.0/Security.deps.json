@@ -19,11 +19,6 @@
         }
       },
       "Microsoft.AI.DirectML/1.12.0": {},
-      "Microsoft.ML.OnnxRuntime/1.15.1": {
-        "dependencies": {
-          "Microsoft.ML.OnnxRuntime.Managed": "1.15.1"
-        }
-      },
       "Microsoft.ML.OnnxRuntime.DirectML/1.15.1": {
         "dependencies": {
           "Microsoft.AI.DirectML": "1.12.0",
@@ -112,7 +107,6 @@
       },
       "Yolov5Net.Scorer/1.0.0": {
         "dependencies": {
-          "Microsoft.ML.OnnxRuntime": "1.15.1",
           "Microsoft.ML.OnnxRuntime.DirectML": "1.15.1",
           "Microsoft.ML.OnnxRuntime.Gpu": "1.15.1",
           "Microsoft.ML.OnnxRuntime.MKLML": "1.6.0",
@@ -137,13 +131,6 @@
       "sha512": "sha512-GvexdRa11PYxzb3vU/U7stc/dpx4SDQ/A8q/mQfba9LHdxx3nQSKzArq1YWUzEZPQ3+j5AZkpJuybWa0oo1EnQ==",
       "path": "microsoft.ai.directml/1.12.0",
       "hashPath": "microsoft.ai.directml.1.12.0.nupkg.sha512"
-    },
-    "Microsoft.ML.OnnxRuntime/1.15.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-kqZ1pL08yus4rVi5gkqaVRzu2Dgu0fC05f1EdV/Th51DIromCh8ZiWrjX7xaED1jqLpa7gMQpa1XEiSgtaZo7Q==",
-      "path": "microsoft.ml.onnxruntime/1.15.1",
-      "hashPath": "microsoft.ml.onnxruntime.1.15.1.nupkg.sha512"
     },
     "Microsoft.ML.OnnxRuntime.DirectML/1.15.1": {
       "type": "package",

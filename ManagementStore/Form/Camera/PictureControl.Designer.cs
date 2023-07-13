@@ -39,6 +39,7 @@ namespace ManagementStore.Form.Camera
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.cEditInVehicle = new DevExpress.XtraEditors.CheckEdit();
             this.panelInFor = new System.Windows.Forms.Panel();
+            this.fpsTest = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).BeginInit();
@@ -52,17 +53,19 @@ namespace ManagementStore.Form.Camera
             // 
             this.panel1.Controls.Add(this.pictureBoxSetting);
             this.panel1.Controls.Add(this.pictureBoxCamera);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Location = new System.Drawing.Point(0, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(423, 232);
+            this.panel1.Size = new System.Drawing.Size(363, 188);
             this.panel1.TabIndex = 1;
             // 
             // pictureBoxSetting
             // 
             this.pictureBoxSetting.Image = global::ManagementStore.Properties.Resources.technology_32x32;
-            this.pictureBoxSetting.Location = new System.Drawing.Point(375, 3);
+            this.pictureBoxSetting.Location = new System.Drawing.Point(321, 2);
+            this.pictureBoxSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxSetting.Name = "pictureBoxSetting";
-            this.pictureBoxSetting.Size = new System.Drawing.Size(45, 45);
+            this.pictureBoxSetting.Size = new System.Drawing.Size(39, 37);
             this.pictureBoxSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSetting.TabIndex = 1;
             this.pictureBoxSetting.TabStop = false;
@@ -73,8 +76,9 @@ namespace ManagementStore.Form.Camera
             this.pictureBoxCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxCamera.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxCamera.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxCamera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxCamera.Name = "pictureBoxCamera";
-            this.pictureBoxCamera.Size = new System.Drawing.Size(423, 232);
+            this.pictureBoxCamera.Size = new System.Drawing.Size(363, 188);
             this.pictureBoxCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCamera.TabIndex = 0;
             this.pictureBoxCamera.TabStop = false;
@@ -85,9 +89,9 @@ namespace ManagementStore.Form.Camera
             this.lbFPS.AutoSize = true;
             this.lbFPS.BackColor = System.Drawing.Color.Gainsboro;
             this.lbFPS.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFPS.Location = new System.Drawing.Point(3, 246);
+            this.lbFPS.Location = new System.Drawing.Point(3, 200);
             this.lbFPS.Name = "lbFPS";
-            this.lbFPS.Size = new System.Drawing.Size(32, 18);
+            this.lbFPS.Size = new System.Drawing.Size(27, 14);
             this.lbFPS.TabIndex = 2;
             this.lbFPS.Text = "FPS";
             // 
@@ -95,15 +99,16 @@ namespace ManagementStore.Form.Camera
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 37);
+            this.label1.Location = new System.Drawing.Point(3, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 40);
+            this.label1.Size = new System.Drawing.Size(58, 33);
             this.label1.TabIndex = 5;
             this.label1.Text = "LP:";
             // 
             // textEditLP
             // 
-            this.textEditLP.Location = new System.Drawing.Point(80, 36);
+            this.textEditLP.Location = new System.Drawing.Point(69, 29);
+            this.textEditLP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEditLP.Name = "textEditLP";
             this.textEditLP.Properties.Appearance.BackColor = System.Drawing.Color.Gainsboro;
             this.textEditLP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,42 +116,57 @@ namespace ManagementStore.Form.Camera
             this.textEditLP.Properties.Appearance.Options.UseFont = true;
             this.textEditLP.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.textEditLP.Properties.ReadOnly = true;
-            this.textEditLP.Size = new System.Drawing.Size(337, 44);
+            this.textEditLP.Size = new System.Drawing.Size(289, 36);
             this.textEditLP.TabIndex = 6;
             // 
             // cEditInVehicle
             // 
-            this.cEditInVehicle.Location = new System.Drawing.Point(303, 3);
+            this.cEditInVehicle.Location = new System.Drawing.Point(260, 2);
+            this.cEditInVehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cEditInVehicle.Name = "cEditInVehicle";
             this.cEditInVehicle.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cEditInVehicle.Properties.Appearance.Options.UseFont = true;
             this.cEditInVehicle.Properties.Caption = "Accept";
             this.cEditInVehicle.Properties.ReadOnly = true;
-            this.cEditInVehicle.Size = new System.Drawing.Size(114, 32);
+            this.cEditInVehicle.Size = new System.Drawing.Size(98, 26);
             this.cEditInVehicle.TabIndex = 7;
             this.cEditInVehicle.Click += new System.EventHandler(this.cEditInVehicle_Click);
             // 
             // panelInFor
             // 
             this.panelInFor.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelInFor.Controls.Add(this.fpsTest);
             this.panelInFor.Controls.Add(this.cEditInVehicle);
             this.panelInFor.Controls.Add(this.label1);
             this.panelInFor.Controls.Add(this.textEditLP);
-            this.panelInFor.Location = new System.Drawing.Point(0, 241);
+            this.panelInFor.Location = new System.Drawing.Point(0, 196);
+            this.panelInFor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInFor.Name = "panelInFor";
-            this.panelInFor.Size = new System.Drawing.Size(420, 85);
+            this.panelInFor.Size = new System.Drawing.Size(360, 69);
             this.panelInFor.TabIndex = 8;
             this.panelInFor.DoubleClick += new System.EventHandler(this.panelInFor_DoubleClickAsync);
             // 
+            // fpsTest
+            // 
+            this.fpsTest.AutoSize = true;
+            this.fpsTest.BackColor = System.Drawing.Color.Transparent;
+            this.fpsTest.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fpsTest.Location = new System.Drawing.Point(6, 4);
+            this.fpsTest.Name = "fpsTest";
+            this.fpsTest.Size = new System.Drawing.Size(27, 14);
+            this.fpsTest.TabIndex = 8;
+            this.fpsTest.Text = "FPS";
+            // 
             // PictureControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelInFor);
             this.Controls.Add(this.lbFPS);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PictureControl";
-            this.Size = new System.Drawing.Size(423, 326);
+            this.Size = new System.Drawing.Size(363, 265);
             this.Load += new System.EventHandler(this.PictureControl_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSetting)).EndInit();
@@ -172,5 +192,6 @@ namespace ManagementStore.Form.Camera
         private System.Windows.Forms.PictureBox pictureBoxSetting;
         private DevExpress.XtraEditors.CheckEdit cEditInVehicle;
         private System.Windows.Forms.Panel panelInFor;
+        private System.Windows.Forms.Label fpsTest;
     }
 }

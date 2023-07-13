@@ -25,7 +25,7 @@ namespace ManagementStore.Form.Camera
         // YOLO Detect
         bool gpuAvailable = false;
 
-        private YoloDetectServices detect = new YoloDetectServices(false);
+        private YoloDetectServices detect;
         private YoloModelDto dto;
         // Video Setting
         VideoCapture capture;
@@ -52,6 +52,10 @@ namespace ManagementStore.Form.Camera
             InitializeComponent();
             this.encode = socket;
             loadCamera();
+            if(index != -1)
+            {
+                detect = new YoloDetectServices(true);
+            }
             cameraindex = index;
             timer.Interval = 1000;
             timer.Tick += (sender, e) =>
@@ -61,7 +65,7 @@ namespace ManagementStore.Form.Camera
 
                 // Calculate and display the number of FPS
                 double fps = (double)(previousFrame) / 1;
-                lbFPS.Text = string.Format("{0:0.00} FPS", fps);
+                fpsTest.Text = string.Format("{0:0.00} FPS", fps);
             };
             // Start Timer
             timer.Start();
@@ -110,9 +114,10 @@ namespace ManagementStore.Form.Camera
                     Image<Bgr, Byte> ImageFrame =  capture.QueryFrame().ToImage<Bgr, byte>();  //line 1
                     CvInvoke.ConvertScaleAbs(ImageFrame, ImageFrame, contrast, bright);
                     Image image = ImageFrame.ToBitmap();
+                    pictureBoxCamera.Image = image;
                     dto = detect.detect(image);
                     // Check execution time limit
-                    if (dto != null )
+                    if (dto != null)
                     {
                         // Check Velhike input output
                         if (bitSent == 1 && dto.countListPrediction() > 0)
@@ -122,55 +127,63 @@ namespace ManagementStore.Form.Camera
                                 bitSent = 0;
                                 using (YoloModelDto dto_sent = new YoloModelDto(dto.getImageBase(), dto.yoloPredictions))
                                 {
-                                
+
                                     // return LP
                                     string mess = await encode.request(dto_sent.getImageBase(), dto_sent.yoloPredictions);
-                                    var dataDetect = JsonConvert.DeserializeObject<DetectDto>(mess);
-                                    if(dataDetect.Plate == null || dataDetect.Plate == "")
+                                    try
                                     {
-                                        textEditLP.Text = dataDetect.Mess;
-                                    }
-                                    textEditLP.Text = dataDetect.Plate;
-                                    // Handle Sent API CheckINOUT
-                                    if (ModelConfig.socketOpen && dataDetect.Plate != "")
-                                    {
-                                        if(dataDetect.Plate != "None")
+                                        var dataDetect = JsonConvert.DeserializeObject<DetectDto>(mess);
+                                        if (dataDetect.Plate == null || dataDetect.Plate == "")
                                         {
-                                            ModelConfig.listFaceCamera[0].startFaceDetect();
-                                            Image face = ModelConfig.listFaceCamera[0].getFaceImage();
-                                            ModelConfig.listFaceCamera[0].endCameraFaceDetect();
-                                            if (face != null || pictureBoxCamera.Image != null)
+                                            textEditLP.Text = dataDetect.Mess;
+                                        }
+                                        textEditLP.Text = dataDetect.Plate;
+                                        // Handle Sent API CheckINOUT
+                                        if (ModelConfig.socketOpen && dataDetect.Plate != "")
+                                        {
+                                            if (dataDetect.Plate != "None")
                                             {
-                                                Image lp = pictureBoxCamera.Image;
-                                                string resultCheckout = await cVehicle.CheckInVehicleAsync(dataDetect.Plate, face, lp,dataDetect.TypeVehicle,dataDetect.TypeLp);
-                                                if (resultCheckout == "Successful")
+                                                ModelConfig.listFaceCamera[0].startFaceDetect();
+                                                Image face = ModelConfig.listFaceCamera[0].getFaceImage();
+                                                ModelConfig.listFaceCamera[0].endCameraFaceDetect();
+                                                if (face != null || pictureBoxCamera.Image != null)
                                                 {
-                                                    cEditInVehicle.Checked = true;
-                                                    await Task.Delay(3000);
-                                                    waitTime = 0;
-                                                    textEditLP.Text = "";
-                                                    cEditInVehicle.Checked = false;
-                                                    bitSent = 1;
+                                                    Image lp = pictureBoxCamera.Image;
+                                                    string resultCheckout = await cVehicle.CheckInVehicleAsync(dataDetect.Plate, face, lp, dataDetect.TypeVehicle, dataDetect.TypeLp);
+                                                    if (resultCheckout == "Successful")
+                                                    {
+                                                        cEditInVehicle.Checked = true;
+                                                        await Task.Delay(3000);
+                                                        waitTime = 0;
+                                                        textEditLP.Text = "";
+                                                        cEditInVehicle.Checked = false;
+                                                        bitSent = 1;
+                                                    }
+                                                    else if (resultCheckout == "Block")
+                                                    {
+                                                        cEditInVehicle.ForeColor = Color.Red;
+                                                        accReport = true; // Accept for user can report
+                                                    }
                                                 }
-                                                else if(resultCheckout == "Block")
-                                                {
-                                                    cEditInVehicle.ForeColor = Color.Red;
-                                                    accReport = true; // Accept for user can report
-                                                }    
-                                            }                              
-                                        }
+                                            }
 
-                                    }
-                                    else
-                                    {
-                                        // Reopen
-                                        while (true)
+                                        }
+                                        else
                                         {
-                                            bool connect = await encode.OpenConnectAsync();
-                                            if (connect)
-                                                break;
+                                            // Reopen
+                                            while (true)
+                                            {
+                                                bool connect = await encode.OpenConnectAsync();
+                                                if (connect)
+                                                    break;
+                                            }
                                         }
                                     }
+                                    catch
+                                    {
+                                        throw;
+                                    }
+
 
                                 }
                                 bitSent = 1;

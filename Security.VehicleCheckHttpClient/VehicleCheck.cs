@@ -76,7 +76,7 @@ namespace Security.VehicleCheckHttpClient
                                                             typeLicensePlate = typeLP, 
                                                             stringFace = base64Image, 
                                                             stringlp = base64Imagelp, 
-                                                            siteId = 19 });
+                                                            siteId = ConfigClass.StoreNo});
 
             using (var client = new HttpClient())
             {

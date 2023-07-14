@@ -51,16 +51,16 @@ namespace ManagementStore.Form.Camera
             this.panelFace.Location = new System.Drawing.Point(0, 2);
             this.panelFace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFace.Name = "panelFace";
-            this.panelFace.Size = new System.Drawing.Size(363, 188);
+            this.panelFace.Size = new System.Drawing.Size(605, 367);
             this.panelFace.TabIndex = 0;
             // 
             // pictureBoxSetting
             // 
             this.pictureBoxSetting.Image = global::ManagementStore.Properties.Resources.technology_32x32;
-            this.pictureBoxSetting.Location = new System.Drawing.Point(321, 2);
+            this.pictureBoxSetting.Location = new System.Drawing.Point(553, 2);
             this.pictureBoxSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxSetting.Name = "pictureBoxSetting";
-            this.pictureBoxSetting.Size = new System.Drawing.Size(39, 37);
+            this.pictureBoxSetting.Size = new System.Drawing.Size(52, 54);
             this.pictureBoxSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSetting.TabIndex = 4;
             this.pictureBoxSetting.TabStop = false;
@@ -73,7 +73,7 @@ namespace ManagementStore.Form.Camera
             this.pBoxFace.Location = new System.Drawing.Point(0, 0);
             this.pBoxFace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pBoxFace.Name = "pBoxFace";
-            this.pBoxFace.Size = new System.Drawing.Size(363, 188);
+            this.pBoxFace.Size = new System.Drawing.Size(605, 367);
             this.pBoxFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBoxFace.TabIndex = 5;
             this.pBoxFace.TabStop = false;
@@ -84,7 +84,7 @@ namespace ManagementStore.Form.Camera
             this.lbFPS.AutoSize = true;
             this.lbFPS.BackColor = System.Drawing.Color.Transparent;
             this.lbFPS.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFPS.Location = new System.Drawing.Point(4, 202);
+            this.lbFPS.Location = new System.Drawing.Point(14, 8);
             this.lbFPS.Name = "lbFPS";
             this.lbFPS.Size = new System.Drawing.Size(27, 14);
             this.lbFPS.TabIndex = 3;
@@ -93,22 +93,23 @@ namespace ManagementStore.Form.Camera
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.lbFPS);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.labelControl2);
             this.panel1.Controls.Add(this.labelControl1);
-            this.panel1.Location = new System.Drawing.Point(-9, 196);
+            this.panel1.Location = new System.Drawing.Point(0, 373);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(371, 69);
+            this.panel1.Size = new System.Drawing.Size(608, 92);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ManagementStore.Properties.Resources.payment2;
-            this.pictureBox1.Location = new System.Drawing.Point(241, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(469, 6);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -141,12 +142,11 @@ namespace ManagementStore.Form.Camera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbFPS);
             this.Controls.Add(this.panelFace);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FaceCameraControl";
-            this.Size = new System.Drawing.Size(363, 265);
+            this.Size = new System.Drawing.Size(611, 467);
             this.panelFace.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFace)).EndInit();
@@ -154,7 +154,6 @@ namespace ManagementStore.Form.Camera
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -6,6 +6,7 @@ using ManagementStore.Common;
 using ManagementStore.DTO;
 using ManagementStore.Services;
 using Newtonsoft.Json;
+using Parking.App.Common.Helper;
 using Security;
 using Security.VehicleCheckHttpClient;
 using System;
@@ -42,7 +43,7 @@ namespace ManagementStore.Form.Camera
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         private int waitTime = 0;
         int currentFrame = 0;
-
+        private DetectDto dataDetect;
         // Brightness
         double bright = 0;
         double dark = 0;
@@ -132,7 +133,7 @@ namespace ManagementStore.Form.Camera
                                     string mess = await encode.request(dto_sent.getImageBase(), dto_sent.yoloPredictions);
                                     try
                                     {
-                                        var dataDetect = JsonConvert.DeserializeObject<DetectDto>(mess);
+                                        dataDetect = JsonConvert.DeserializeObject<DetectDto>(mess);
                                         if (dataDetect.Plate == null || dataDetect.Plate == "")
                                         {
                                             textEditLP.Text = dataDetect.Mess;
@@ -152,15 +153,19 @@ namespace ManagementStore.Form.Camera
                                                     string resultCheckout = await cVehicle.CheckInVehicleAsync(dataDetect.Plate, face, lp, dataDetect.TypeVehicle, dataDetect.TypeLp);
                                                     if (resultCheckout == "Successful")
                                                     {
+                                                        Helpers.PlaySound(@"Assets\\DefaultAudio\TrackSuccessful.wav");
                                                         cEditInVehicle.Checked = true;
                                                         await Task.Delay(3000);
                                                         waitTime = 0;
                                                         textEditLP.Text = "";
                                                         cEditInVehicle.Checked = false;
                                                         bitSent = 1;
+                                                        Helpers.StopSound();
+
                                                     }
                                                     else if (resultCheckout == "Block")
                                                     {
+                                                        Helpers.PlaySound(@"Assets\\DefaultAudio\Failtrack.wav");
                                                         cEditInVehicle.ForeColor = Color.Red;
                                                         accReport = true; // Accept for user can report
                                                     }
@@ -181,7 +186,7 @@ namespace ManagementStore.Form.Camera
                                     }
                                     catch
                                     {
-                                        throw;
+                                        
                                     }
 
 
@@ -277,8 +282,9 @@ namespace ManagementStore.Form.Camera
                 ModelConfig.listFaceCamera[0].endCameraFaceDetect();
                 if (face != null || pictureBoxCamera.Image != null)
                 {
-                    bool resultReport = await cVehicle.TrackReportAsync(pictureBoxCamera.Image,face, textEditLP.Text);
-                    accReport = false;
+                    bool resultReport = await cVehicle.TrackReportAsync(pictureBoxCamera.Image,face, textEditLP.Text, dataDetect.TypeVehicle, dataDetect.TypeLp);
+                    //if()
+                    //accReport = false;
                 }
             }
         }

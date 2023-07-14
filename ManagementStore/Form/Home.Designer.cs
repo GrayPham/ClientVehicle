@@ -29,10 +29,10 @@ namespace ManagementStore.Form
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             this.cameraControl1 = new DevExpress.XtraEditors.Camera.CameraControl();
             this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
             this.tileBarGroup2 = new DevExpress.XtraBars.Navigation.TileBarGroup();
@@ -49,9 +49,10 @@ namespace ManagementStore.Form
             // 
             // cameraControl1
             // 
-            this.cameraControl1.Location = new System.Drawing.Point(5, 5);
+            this.cameraControl1.Location = new System.Drawing.Point(4, 4);
+            this.cameraControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cameraControl1.Name = "cameraControl1";
-            this.cameraControl1.Size = new System.Drawing.Size(821, 321);
+            this.cameraControl1.Size = new System.Drawing.Size(704, 261);
             this.cameraControl1.TabIndex = 0;
             this.cameraControl1.Text = "cameraControl1";
             // 
@@ -62,11 +63,13 @@ namespace ManagementStore.Form
             this.tileBar1.Groups.Add(this.tileBarGroup2);
             this.tileBar1.Groups.Add(this.tileBarGroup1);
             this.tileBar1.Groups.Add(this.tileBarGroup4);
-            this.tileBar1.Location = new System.Drawing.Point(134, 833);
+            this.tileBar1.Location = new System.Drawing.Point(115, 677);
+            this.tileBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tileBar1.MaxId = 5;
             this.tileBar1.Name = "tileBar1";
+            this.tileBar1.Padding = new System.Windows.Forms.Padding(19, 6, 19, 6);
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.Size = new System.Drawing.Size(560, 113);
+            this.tileBar1.Size = new System.Drawing.Size(480, 92);
             this.tileBar1.TabIndex = 2;
             this.tileBar1.Text = "12";
             // 
@@ -78,9 +81,9 @@ namespace ManagementStore.Form
             // tileBarItem3
             // 
             this.tileBarItem3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            tileItemElement13.Text = "Register Account";
-            this.tileBarItem3.Elements.Add(tileItemElement13);
+            tileItemElement1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            tileItemElement1.Text = "Register Account";
+            this.tileBarItem3.Elements.Add(tileItemElement1);
             this.tileBarItem3.Id = 2;
             this.tileBarItem3.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem3.Name = "tileBarItem3";
@@ -94,8 +97,8 @@ namespace ManagementStore.Form
             // tileBarItem2
             // 
             this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement14.Text = "";
-            this.tileBarItem2.Elements.Add(tileItemElement14);
+            tileItemElement2.Text = "";
+            this.tileBarItem2.Elements.Add(tileItemElement2);
             this.tileBarItem2.Id = 4;
             this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem2.Name = "tileBarItem2";
@@ -108,8 +111,8 @@ namespace ManagementStore.Form
             // tileBarItem1
             // 
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement15.Text = "";
-            this.tileBarItem1.Elements.Add(tileItemElement15);
+            tileItemElement3.Text = "";
+            this.tileBarItem1.Elements.Add(tileItemElement3);
             this.tileBarItem1.Id = 3;
             this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem1.Name = "tileBarItem1";
@@ -121,26 +124,29 @@ namespace ManagementStore.Form
             this.panelControl1.Controls.Add(this.cameraControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(826, 958);
+            this.panelControl1.Size = new System.Drawing.Size(708, 778);
             this.panelControl1.TabIndex = 0;
             // 
             // webBrowserVideo
             // 
-            this.webBrowserVideo.Location = new System.Drawing.Point(5, 332);
-            this.webBrowserVideo.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserVideo.Location = new System.Drawing.Point(4, 270);
+            this.webBrowserVideo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.webBrowserVideo.MinimumSize = new System.Drawing.Size(17, 16);
             this.webBrowserVideo.Name = "webBrowserVideo";
-            this.webBrowserVideo.Size = new System.Drawing.Size(816, 495);
+            this.webBrowserVideo.Size = new System.Drawing.Size(699, 402);
             this.webBrowserVideo.TabIndex = 3;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 958);
+            this.ClientSize = new System.Drawing.Size(708, 778);
             this.Controls.Add(this.panelControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.HelpButton = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Home";

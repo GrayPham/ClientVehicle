@@ -77,10 +77,11 @@ namespace ManagementStore.Form
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem3);
             this.ribbonStatusBar.ItemLinks.Add(this.barItemPort);
             this.ribbonStatusBar.ItemLinks.Add(this.barItemVersion);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 735);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 1009);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1384, 29);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1909, 23);
             // 
             // barItemConnect
             // 
@@ -145,6 +146,7 @@ namespace ManagementStore.Form
             this.barItemPort,
             this.barItemVersion});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbon.MaxItemId = 14;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barHeaderItem1);
@@ -152,7 +154,7 @@ namespace ManagementStore.Form
             this.ribbon.QuickToolbarItemLinks.Add(this.barStaticItem2);
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTimeSpanEdit1});
-            this.ribbon.Size = new System.Drawing.Size(1384, 66);
+            this.ribbon.Size = new System.Drawing.Size(1909, 54);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barHeaderItem1
@@ -207,53 +209,59 @@ namespace ManagementStore.Form
             this.panelControlMain.Controls.Add(this.panelControlOut);
             this.panelControlMain.Controls.Add(this.panelControlInPut);
             this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlMain.Location = new System.Drawing.Point(0, 66);
+            this.panelControlMain.Location = new System.Drawing.Point(0, 54);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControlMain.Name = "panelControlMain";
-            this.panelControlMain.Size = new System.Drawing.Size(1384, 669);
+            this.panelControlMain.Size = new System.Drawing.Size(1909, 955);
             this.panelControlMain.TabIndex = 3;
             // 
             // panelControlOut
             // 
             this.panelControlOut.Controls.Add(this.panelControl1);
             this.panelControlOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlOut.Location = new System.Drawing.Point(2, 337);
+            this.panelControlOut.Location = new System.Drawing.Point(2, 474);
+            this.panelControlOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControlOut.Name = "panelControlOut";
-            this.panelControlOut.Size = new System.Drawing.Size(1380, 330);
+            this.panelControlOut.Size = new System.Drawing.Size(1905, 479);
             this.panelControlOut.TabIndex = 1;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.panelLPOut1);
-            this.panelControl1.Controls.Add(this.panelLPIn1);
             this.panelControl1.Controls.Add(this.panelFace2);
+            this.panelControl1.Controls.Add(this.panelLPIn1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(2, 2);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1376, 326);
+            this.panelControl1.Size = new System.Drawing.Size(1901, 475);
             this.panelControl1.TabIndex = 0;
             // 
             // panelLPOut1
             // 
             this.panelLPOut1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLPOut1.Location = new System.Drawing.Point(945, 0);
+            this.panelLPOut1.Location = new System.Drawing.Point(1282, 2);
+            this.panelLPOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLPOut1.Name = "panelLPOut1";
-            this.panelLPOut1.Size = new System.Drawing.Size(423, 326);
+            this.panelLPOut1.Size = new System.Drawing.Size(611, 467);
             this.panelLPOut1.TabIndex = 5;
             // 
             // panelLPIn1
             // 
             this.panelLPIn1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLPIn1.Location = new System.Drawing.Point(8, 0);
+            this.panelLPIn1.Location = new System.Drawing.Point(7, 4);
+            this.panelLPIn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLPIn1.Name = "panelLPIn1";
-            this.panelLPIn1.Size = new System.Drawing.Size(423, 326);
+            this.panelLPIn1.Size = new System.Drawing.Size(611, 467);
             this.panelLPIn1.TabIndex = 4;
             // 
             // panelFace2
             // 
             this.panelFace2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFace2.Location = new System.Drawing.Point(477, 0);
+            this.panelFace2.Location = new System.Drawing.Point(644, 4);
+            this.panelFace2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFace2.Name = "panelFace2";
-            this.panelFace2.Size = new System.Drawing.Size(423, 326);
+            this.panelFace2.Size = new System.Drawing.Size(611, 467);
             this.panelFace2.TabIndex = 3;
             // 
             // panelControlInPut
@@ -263,32 +271,36 @@ namespace ManagementStore.Form
             this.panelControlInPut.Controls.Add(this.panelIn);
             this.panelControlInPut.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlInPut.Location = new System.Drawing.Point(2, 2);
+            this.panelControlInPut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControlInPut.Name = "panelControlInPut";
-            this.panelControlInPut.Size = new System.Drawing.Size(1380, 335);
+            this.panelControlInPut.Size = new System.Drawing.Size(1905, 472);
             this.panelControlInPut.TabIndex = 0;
             // 
             // panelFace
             // 
             this.panelFace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFace.Location = new System.Drawing.Point(481, 5);
+            this.panelFace.Location = new System.Drawing.Point(646, 7);
+            this.panelFace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFace.Name = "panelFace";
-            this.panelFace.Size = new System.Drawing.Size(423, 326);
+            this.panelFace.Size = new System.Drawing.Size(611, 467);
             this.panelFace.TabIndex = 4;
             // 
             // panelLPOut
             // 
             this.panelLPOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLPOut.Location = new System.Drawing.Point(947, 5);
+            this.panelLPOut.Location = new System.Drawing.Point(1284, 4);
+            this.panelLPOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLPOut.Name = "panelLPOut";
-            this.panelLPOut.Size = new System.Drawing.Size(423, 326);
+            this.panelLPOut.Size = new System.Drawing.Size(611, 467);
             this.panelLPOut.TabIndex = 3;
             // 
             // panelIn
             // 
             this.panelIn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelIn.Location = new System.Drawing.Point(10, 5);
+            this.panelIn.Location = new System.Drawing.Point(9, 4);
+            this.panelIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelIn.Name = "panelIn";
-            this.panelIn.Size = new System.Drawing.Size(423, 326);
+            this.panelIn.Size = new System.Drawing.Size(611, 467);
             this.panelIn.TabIndex = 2;
             // 
             // skinRibbonGalleryBarItem1
@@ -316,12 +328,13 @@ namespace ManagementStore.Form
             // 
             // DetectClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 764);
+            this.ClientSize = new System.Drawing.Size(1909, 1032);
             this.Controls.Add(this.panelControlMain);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DetectClient";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

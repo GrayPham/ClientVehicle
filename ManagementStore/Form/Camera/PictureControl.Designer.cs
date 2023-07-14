@@ -33,7 +33,6 @@ namespace ManagementStore.Form.Camera
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxSetting = new System.Windows.Forms.PictureBox();
             this.pictureBoxCamera = new System.Windows.Forms.PictureBox();
-            this.lbFPS = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textEditLP = new DevExpress.XtraEditors.TextEdit();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
@@ -56,16 +55,16 @@ namespace ManagementStore.Form.Camera
             this.panel1.Location = new System.Drawing.Point(0, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 188);
+            this.panel1.Size = new System.Drawing.Size(608, 369);
             this.panel1.TabIndex = 1;
             // 
             // pictureBoxSetting
             // 
             this.pictureBoxSetting.Image = global::ManagementStore.Properties.Resources.technology_32x32;
-            this.pictureBoxSetting.Location = new System.Drawing.Point(321, 2);
+            this.pictureBoxSetting.Location = new System.Drawing.Point(550, 2);
             this.pictureBoxSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxSetting.Name = "pictureBoxSetting";
-            this.pictureBoxSetting.Size = new System.Drawing.Size(39, 37);
+            this.pictureBoxSetting.Size = new System.Drawing.Size(55, 58);
             this.pictureBoxSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSetting.TabIndex = 1;
             this.pictureBoxSetting.TabStop = false;
@@ -74,26 +73,14 @@ namespace ManagementStore.Form.Camera
             // pictureBoxCamera
             // 
             this.pictureBoxCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxCamera.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCamera.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxCamera.Location = new System.Drawing.Point(3, 2);
             this.pictureBoxCamera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxCamera.Name = "pictureBoxCamera";
-            this.pictureBoxCamera.Size = new System.Drawing.Size(363, 188);
+            this.pictureBoxCamera.Size = new System.Drawing.Size(605, 367);
             this.pictureBoxCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCamera.TabIndex = 0;
             this.pictureBoxCamera.TabStop = false;
             this.pictureBoxCamera.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxCamera_Paint);
-            // 
-            // lbFPS
-            // 
-            this.lbFPS.AutoSize = true;
-            this.lbFPS.BackColor = System.Drawing.Color.Gainsboro;
-            this.lbFPS.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFPS.Location = new System.Drawing.Point(3, 200);
-            this.lbFPS.Name = "lbFPS";
-            this.lbFPS.Size = new System.Drawing.Size(27, 14);
-            this.lbFPS.TabIndex = 2;
-            this.lbFPS.Text = "FPS";
             // 
             // label1
             // 
@@ -121,7 +108,7 @@ namespace ManagementStore.Form.Camera
             // 
             // cEditInVehicle
             // 
-            this.cEditInVehicle.Location = new System.Drawing.Point(260, 2);
+            this.cEditInVehicle.Location = new System.Drawing.Point(497, 2);
             this.cEditInVehicle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cEditInVehicle.Name = "cEditInVehicle";
             this.cEditInVehicle.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,10 +126,10 @@ namespace ManagementStore.Form.Camera
             this.panelInFor.Controls.Add(this.cEditInVehicle);
             this.panelInFor.Controls.Add(this.label1);
             this.panelInFor.Controls.Add(this.textEditLP);
-            this.panelInFor.Location = new System.Drawing.Point(0, 196);
+            this.panelInFor.Location = new System.Drawing.Point(3, 375);
             this.panelInFor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInFor.Name = "panelInFor";
-            this.panelInFor.Size = new System.Drawing.Size(360, 69);
+            this.panelInFor.Size = new System.Drawing.Size(605, 90);
             this.panelInFor.TabIndex = 8;
             this.panelInFor.DoubleClick += new System.EventHandler(this.panelInFor_DoubleClickAsync);
             // 
@@ -162,11 +149,10 @@ namespace ManagementStore.Form.Camera
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelInFor);
-            this.Controls.Add(this.lbFPS);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PictureControl";
-            this.Size = new System.Drawing.Size(363, 265);
+            this.Size = new System.Drawing.Size(611, 467);
             this.Load += new System.EventHandler(this.PictureControl_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSetting)).EndInit();
@@ -177,7 +163,6 @@ namespace ManagementStore.Form.Camera
             this.panelInFor.ResumeLayout(false);
             this.panelInFor.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -185,7 +170,6 @@ namespace ManagementStore.Form.Camera
 
         private System.Windows.Forms.PictureBox pictureBoxCamera;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbFPS;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit textEditLP;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;

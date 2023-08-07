@@ -38,7 +38,7 @@ namespace ManagementStore.Form.Camera
         int cameraindex = -1;
         // API
         VehicleCheck cVehicle = new VehicleCheck();
-        private bool accReport = false;
+        public bool accReport = false;
         //Test FPS
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         private int waitTime = 0;
@@ -134,55 +134,59 @@ namespace ManagementStore.Form.Camera
                                     try
                                     {
                                         dataDetect = JsonConvert.DeserializeObject<DetectDto>(mess);
-                                        if (dataDetect.Plate == null || dataDetect.Plate == "")
+                                        if (dataDetect == null)
                                         {
-                                            textEditLP.Text = dataDetect.Mess;
-                                        }
-                                        textEditLP.Text = dataDetect.Plate;
-                                        // Handle Sent API CheckINOUT
-                                        if (ModelConfig.socketOpen && dataDetect.Plate != "")
-                                        {
-                                            if (dataDetect.Plate != "None")
-                                            {
-                                                ModelConfig.listFaceCamera[0].startFaceDetect();
-                                                Image face = ModelConfig.listFaceCamera[0].getFaceImage();
-                                                ModelConfig.listFaceCamera[0].endCameraFaceDetect();
-                                                if (face != null || pictureBoxCamera.Image != null)
-                                                {
-                                                    Image lp = pictureBoxCamera.Image;
-                                                    string resultCheckout = await cVehicle.CheckInVehicleAsync(dataDetect.Plate, face, lp, dataDetect.TypeVehicle, dataDetect.TypeLp);
-                                                    if (resultCheckout == "Successful")
-                                                    {
-                                                        Helpers.PlaySound(@"Assets\\DefaultAudio\TrackSuccessful.wav");
-                                                        cEditInVehicle.Checked = true;
-                                                        await Task.Delay(3000);
-                                                        waitTime = 0;
-                                                        textEditLP.Text = "";
-                                                        cEditInVehicle.Checked = false;
-                                                        bitSent = 1;
-                                                        Helpers.StopSound();
-
-                                                    }
-                                                    else if (resultCheckout == "Block")
-                                                    {
-                                                        Helpers.PlaySound(@"Assets\\DefaultAudio\Failtrack.wav");
-                                                        cEditInVehicle.ForeColor = Color.Red;
-                                                        accReport = true; // Accept for user can report
-                                                    }
-                                                }
-                                            }
-
+                                            textEditLP.Text = "";
                                         }
                                         else
                                         {
-                                            // Reopen
-                                            while (true)
+                                            textEditLP.Text = dataDetect.Plate;
+                                            // Handle Sent API CheckINOUT
+                                            if (ModelConfig.socketOpen && dataDetect.Plate != "")
                                             {
-                                                bool connect = await encode.OpenConnectAsync();
-                                                if (connect)
-                                                    break;
+                                                if (dataDetect.Plate != "None")
+                                                {
+                                                    ModelConfig.listFaceCamera[0].startFaceDetect();
+                                                    Image face = ModelConfig.listFaceCamera[0].getFaceImage();
+                                                    ModelConfig.listFaceCamera[0].endCameraFaceDetect();
+                                                    if (face != null || pictureBoxCamera.Image != null)
+                                                    {
+                                                        Image lp = pictureBoxCamera.Image;
+                                                        string resultCheckout = await cVehicle.CheckInVehicleAsync(dataDetect.Plate, face, lp, dataDetect.TypeVehicle, dataDetect.TypeLp);
+                                                        if (resultCheckout == "Successful")
+                                                        {
+                                                            Helpers.PlaySound(@"Assets\\DefaultAudio\TrackSuccessful.wav");
+                                                            cEditInVehicle.Checked = true;
+                                                            await Task.Delay(4000);
+                                                            waitTime = 0;
+                                                            textEditLP.Text = "";
+                                                            cEditInVehicle.Checked = false;
+                                                            bitSent = 1;
+                                                            Helpers.StopSound();
+
+                                                        }
+                                                        else if (resultCheckout == "Block")
+                                                        {
+                                                            Helpers.PlaySound(@"Assets\\DefaultAudio\Failtrack.wav");
+                                                            cEditInVehicle.ForeColor = Color.Red;
+                                                            accReport = true; // Accept for user can report
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                // Reopen
+                                                while (true)
+                                                {
+                                                    bool connect = await encode.OpenConnectAsync();
+                                                    if (connect)
+                                                        break;
+                                                }
                                             }
                                         }
+                                        
                                     }
                                     catch
                                     {
@@ -272,10 +276,10 @@ namespace ManagementStore.Form.Camera
             cEditInVehicle.ForeColor = Color.Black;
         }
         #region Report
-
+        private int numReport = 0;
         private async void panelInFor_DoubleClickAsync(object sender, EventArgs e)
         {
-            if(accReport == true)
+            if(accReport == true && numReport <4)
             {
                 ModelConfig.listFaceCamera[0].startFaceDetect();
                 Image face = ModelConfig.listFaceCamera[0].getFaceImage();
@@ -283,10 +287,32 @@ namespace ManagementStore.Form.Camera
                 if (face != null || pictureBoxCamera.Image != null)
                 {
                     bool resultReport = await cVehicle.TrackReportAsync(pictureBoxCamera.Image,face, textEditLP.Text, dataDetect.TypeVehicle, dataDetect.TypeLp);
-                    //if()
-                    //accReport = false;
+                    if(resultReport)
+                    {
+                        // Audio Accept
+                        Helpers.PlaySound(@"Assets\DefaultAudio\REPORT02.wav");
+                        cEditInVehicle.ForeColor = Color.Blue;
+                        accReport = false;
+                        await Task.Delay(5000);
+
+                    }
+                    else
+                    {
+                        numReport = numReport + 1;
+                        // Audio Bao cao that bai 
+                        Helpers.PlaySound(@"Assets\DefaultAudio\REPORT00.wav");
+                        await Task.Delay(5000);
+                    }
+                    //
                 }
             }
+            else
+            {
+                Helpers.PlaySound(@"Assets\DefaultAudio\REPORT01.wav");
+                labelPhone.Text = "0927148099";
+                await Task.Delay(5000);
+            }
+            
         }
         #endregion
     }

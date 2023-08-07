@@ -47,8 +47,8 @@ namespace ManagementStore.Form
             this.panelControlOut = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelLPOut1 = new System.Windows.Forms.Panel();
-            this.panelLPIn1 = new System.Windows.Forms.Panel();
             this.panelFace2 = new System.Windows.Forms.Panel();
+            this.panelLPIn1 = new System.Windows.Forms.Panel();
             this.panelControlInPut = new DevExpress.XtraEditors.PanelControl();
             this.panelFace = new System.Windows.Forms.Panel();
             this.panelLPOut = new System.Windows.Forms.Panel();
@@ -57,6 +57,7 @@ namespace ManagementStore.Form
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ManagementStore.Form.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeSpanEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
@@ -246,15 +247,6 @@ namespace ManagementStore.Form
             this.panelLPOut1.Size = new System.Drawing.Size(611, 467);
             this.panelLPOut1.TabIndex = 5;
             // 
-            // panelLPIn1
-            // 
-            this.panelLPIn1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLPIn1.Location = new System.Drawing.Point(7, 4);
-            this.panelLPIn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelLPIn1.Name = "panelLPIn1";
-            this.panelLPIn1.Size = new System.Drawing.Size(611, 467);
-            this.panelLPIn1.TabIndex = 4;
-            // 
             // panelFace2
             // 
             this.panelFace2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -263,6 +255,15 @@ namespace ManagementStore.Form
             this.panelFace2.Name = "panelFace2";
             this.panelFace2.Size = new System.Drawing.Size(611, 467);
             this.panelFace2.TabIndex = 3;
+            // 
+            // panelLPIn1
+            // 
+            this.panelLPIn1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLPIn1.Location = new System.Drawing.Point(7, 4);
+            this.panelLPIn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelLPIn1.Name = "panelLPIn1";
+            this.panelLPIn1.Size = new System.Drawing.Size(611, 467);
+            this.panelLPIn1.TabIndex = 4;
             // 
             // panelControlInPut
             // 
@@ -326,6 +327,10 @@ namespace ManagementStore.Form
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // DetectClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,5 +389,6 @@ namespace ManagementStore.Form
         private System.Windows.Forms.Panel panelLPOut1;
         private System.Windows.Forms.Panel panelLPIn1;
         private System.Windows.Forms.Panel panelFace2;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

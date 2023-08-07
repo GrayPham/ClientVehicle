@@ -39,6 +39,7 @@ namespace ManagementStore.Form.Camera
             this.cEditInVehicle = new DevExpress.XtraEditors.CheckEdit();
             this.panelInFor = new System.Windows.Forms.Panel();
             this.fpsTest = new System.Windows.Forms.Label();
+            this.labelPhone = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).BeginInit();
@@ -122,6 +123,7 @@ namespace ManagementStore.Form.Camera
             // panelInFor
             // 
             this.panelInFor.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelInFor.Controls.Add(this.labelPhone);
             this.panelInFor.Controls.Add(this.fpsTest);
             this.panelInFor.Controls.Add(this.cEditInVehicle);
             this.panelInFor.Controls.Add(this.label1);
@@ -143,6 +145,15 @@ namespace ManagementStore.Form.Camera
             this.fpsTest.Size = new System.Drawing.Size(27, 14);
             this.fpsTest.TabIndex = 8;
             this.fpsTest.Text = "FPS";
+            // 
+            // labelPhone
+            // 
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone.Location = new System.Drawing.Point(417, 32);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(0, 33);
+            this.labelPhone.TabIndex = 9;
             // 
             // PictureControl
             // 
@@ -170,12 +181,13 @@ namespace ManagementStore.Form.Camera
 
         private System.Windows.Forms.PictureBox pictureBoxCamera;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit textEditLP;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private System.Windows.Forms.PictureBox pictureBoxSetting;
-        private DevExpress.XtraEditors.CheckEdit cEditInVehicle;
         private System.Windows.Forms.Panel panelInFor;
         private System.Windows.Forms.Label fpsTest;
+        private System.Windows.Forms.Label labelPhone;
+        public System.Windows.Forms.Label label1;
+        public DevExpress.XtraEditors.CheckEdit cEditInVehicle;
     }
 }

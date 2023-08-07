@@ -87,7 +87,7 @@ namespace Security.VehicleCheckHttpClient
                 {
                     // Read the response as a string
                     var responseString = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<TrackReportRespose>(responseString);
+                    TrackReportRespose result = JsonConvert.DeserializeObject<TrackReportRespose>(responseString);
                     if (result.getStatus() != false)
                         return true;
                     else

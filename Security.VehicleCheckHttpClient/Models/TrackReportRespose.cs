@@ -8,14 +8,11 @@ namespace Security.VehicleCheckHttpClient.Models
 {
     public class TrackReportRespose
     {
-        private bool Status { get; }
-        public TrackReportRespose(bool _status)
-        {
-            Status = _status;
-        }
+        public bool status { get; set; }
+
         public bool getStatus()
         {
-            return Status;
+            return status;
         }
     }
 }

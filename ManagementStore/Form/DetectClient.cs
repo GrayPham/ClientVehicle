@@ -22,6 +22,7 @@ using Parking.App.Service.Common;
 using Connect.Common.Helper;
 using Parking.App.Common;
 using Newtonsoft.Json;
+using ManagementStore.TableDependencies;
 
 namespace ManagementStore.Form
 {
@@ -59,6 +60,7 @@ namespace ManagementStore.Form
         }
         private void DetectClient_Load(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             ProgramFactory.Instance.ProgramController = this;
             _log = ProgramFactory.Instance.Log;
             AddEventCommon();
@@ -90,13 +92,23 @@ namespace ManagementStore.Form
                 FaceCameraControl faceCameraControl1 = new FaceCameraControl(-1);
                 ModelConfig.listFaceCamera.Add(faceCameraControl1);
                 panelFace2.Controls.Add(ModelConfig.listFaceCamera[1]);
+
+
+                // Start SubcribeReportTableDependency
+
+                SubcribeReportTableDependency reportTableDependency = new SubcribeReportTableDependency(pictureControl);
+
+                // Start subscribing to table changes
+                reportTableDependency.SubcribeTableDependency();
             }
             else if (dataCamera.Count == 2)
             {
                 PictureControl pictureControl = new PictureControl(0, Encode);
                 panelIn.Controls.Add(pictureControl);
             }
-            
+            splashScreenManager1.CloseWaitForm();
+
+
         }
 
         private void LoadCamera()

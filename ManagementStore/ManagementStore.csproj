@@ -183,6 +183,15 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TableDependency, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.7.5.0\lib\TableDependency.dll</HintPath>
+    </Reference>
+    <Reference Include="TableDependency.SqlClient, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.7.5.0\lib\TableDependency.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="TableDependency.SqlClient.Where, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.7.5.0\lib\TableDependency.SqlClient.Where.dll</HintPath>
+    </Reference>
     <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
@@ -279,11 +288,18 @@
     <Compile Include="Form\User\RegisterUser.Designer.cs">
       <DependentUpon>RegisterUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\CommonModel.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\CurrentUser.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\AppUser.cs" />
+    <Compile Include="Model\tblTrack.cs" />
     <Compile Include="Model\Warehouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +307,7 @@
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="Services\WarehouseServices.cs" />
     <Compile Include="Services\YoloDetectServices.cs" />
+    <Compile Include="TableDependencies\SubcribeReportTableDependency.cs" />
     <EmbeddedResource Include="Form\Camera\FaceCameraControl.resx">
       <DependentUpon>FaceCameraControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\User\RegisterUser.resx">
       <DependentUpon>RegisterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -54,7 +54,7 @@ namespace ManagementStore.DTO
             _ImagwBase = ImagwBase;
             _predictions = predictions;
         }
-
+        
         public void Dispose()
         {
             if (_ImageDetect != null)

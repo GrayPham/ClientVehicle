@@ -38,8 +38,9 @@ namespace ManagementStore.Form.Camera
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.cEditInVehicle = new DevExpress.XtraEditors.CheckEdit();
             this.panelInFor = new System.Windows.Forms.Panel();
-            this.fpsTest = new System.Windows.Forms.Label();
+            this.btnVideo = new DevExpress.XtraEditors.SimpleButton();
             this.labelPhone = new System.Windows.Forms.Label();
+            this.fpsTest = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).BeginInit();
@@ -104,7 +105,7 @@ namespace ManagementStore.Form.Camera
             this.textEditLP.Properties.Appearance.Options.UseFont = true;
             this.textEditLP.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.textEditLP.Properties.ReadOnly = true;
-            this.textEditLP.Size = new System.Drawing.Size(289, 36);
+            this.textEditLP.Size = new System.Drawing.Size(348, 36);
             this.textEditLP.TabIndex = 6;
             // 
             // cEditInVehicle
@@ -123,6 +124,7 @@ namespace ManagementStore.Form.Camera
             // panelInFor
             // 
             this.panelInFor.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelInFor.Controls.Add(this.btnVideo);
             this.panelInFor.Controls.Add(this.labelPhone);
             this.panelInFor.Controls.Add(this.fpsTest);
             this.panelInFor.Controls.Add(this.cEditInVehicle);
@@ -135,6 +137,24 @@ namespace ManagementStore.Form.Camera
             this.panelInFor.TabIndex = 8;
             this.panelInFor.DoubleClick += new System.EventHandler(this.panelInFor_DoubleClickAsync);
             // 
+            // btnVideo
+            // 
+            this.btnVideo.Location = new System.Drawing.Point(493, 38);
+            this.btnVideo.Name = "btnVideo";
+            this.btnVideo.Size = new System.Drawing.Size(102, 32);
+            this.btnVideo.TabIndex = 10;
+            this.btnVideo.Text = "Video";
+            this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
+            // 
+            // labelPhone
+            // 
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone.Location = new System.Drawing.Point(417, 32);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(0, 33);
+            this.labelPhone.TabIndex = 9;
+            // 
             // fpsTest
             // 
             this.fpsTest.AutoSize = true;
@@ -145,15 +165,6 @@ namespace ManagementStore.Form.Camera
             this.fpsTest.Size = new System.Drawing.Size(27, 14);
             this.fpsTest.TabIndex = 8;
             this.fpsTest.Text = "FPS";
-            // 
-            // labelPhone
-            // 
-            this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(417, 32);
-            this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(0, 33);
-            this.labelPhone.TabIndex = 9;
             // 
             // PictureControl
             // 
@@ -189,5 +200,6 @@ namespace ManagementStore.Form.Camera
         private System.Windows.Forms.Label labelPhone;
         public System.Windows.Forms.Label label1;
         public DevExpress.XtraEditors.CheckEdit cEditInVehicle;
+        private DevExpress.XtraEditors.SimpleButton btnVideo;
     }
 }

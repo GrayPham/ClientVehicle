@@ -20,19 +20,14 @@ namespace Security.VehicleCheckHttpClient
         HttpClient client = new HttpClient();
         public string ConvertImageToBase64(Image image)
         {
-            using (var ms = new MemoryStream())
-            {
-                // Convert the image to a byte array
-                image.Save(ms,  ImageFormat.Jpeg);
-                var imageBytes = ms.ToArray();
-
-                // Convert the byte array to a base64 string
-                var base64String = Convert.ToBase64String(imageBytes);
-                return base64String;
-            }
+            MemoryStream ms = new MemoryStream();
+            
+            image.Save(ms, ImageFormat.Jpeg); // You can use other formats like ImageFormat.Png, ImageFormat.Gif, etc.
+            return Convert.ToBase64String(ms.GetBuffer(), 0, (int)ms.Length);
+            
         }
 
-        public async Task<string> CheckInVehicleAsync(string platenumber, Image faceImage,Image lpImage, string typeTransport = "car", string typeLP = "2")
+        public async Task<string> CheckInVehicleAsync(string platenumber, Image faceImage, Image lpImage, string typeTransport = "car", string typeLP = "2")
         {
             // Convert the byte array to a base64 string
             string base64Image = ConvertImageToBase64(faceImage);

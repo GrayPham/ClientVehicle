@@ -22,9 +22,9 @@ namespace Yolov5Net.Scorer.Models
 
         public override int[] Shapes { get; set; } = new int[] { 80, 40, 20 };
 
-        public override float Confidence { get; set; } = 0.85f;
-        public override float MulConfidence { get; set; } = 0.8f;
-        public override float Overlap { get; set; } = 0.45f;
+        public override float Confidence { get; set; } = 0.80f;
+        public override float MulConfidence { get; set; } = 0.75f;
+        public override float Overlap { get; set; } = 0.3f;
 
         public override string[] Outputs { get; set; } = new[] { "output0" };
 
